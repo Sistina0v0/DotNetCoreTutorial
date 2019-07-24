@@ -1,0 +1,20 @@
+﻿@model IEnumerable<Tutorial.Portal.EntityModel.User>
+@{
+}
+
+<html>
+<head>
+
+</head>
+<body>
+<h1>用户信息</h1>
+<ul>
+    @foreach (var user in Model)
+    {
+        <li>@user.UserName</li>
+    }
+</ul>
+</body>
+</html>
+
+
