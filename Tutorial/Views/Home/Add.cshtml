@@ -1,25 +1,24 @@
-﻿@model User
+﻿@model Tutorial.Portal.ViewModel.UserViewModel
 
 @{
     ViewBag.Title = "Add user";
 }
 
-    <form asp-action="Add" method="post">
-        <div>
-            <label asp-for="UserName"></label>
-            <input asp-for="UserName" />
-            <span asp-validation-for="UserName"></span>
-        </div>
-        <div>
-            <label asp-for="Gender"></label>
-            <select asp-for="Gender" asp-items="@Html.GetEnumSelectList(typeof(Gender))"></select>
-            <span asp-validation-for="Gender"></span>
+<form asp-action="Add" method="post">
 
-        </div>   
-        <div>
-            <label asp-for="BirthDate"></label>
-            <input asp-for="BirthDate" />
-            <span asp-validation-for="BirthDate"></span>
-        </div>
-        <input type="submit" value="Submit" />
-    </form>
+    <div>
+        <label asp-for="LoginName"></label>
+        <input asp-for="LoginName" />
+        <span asp-validation-for="LoginName"></span>
+    </div>
+
+    <div>
+        <label asp-for="Pwd"></label>
+        <input asp-for="Pwd" />
+        <span asp-validation-for="Pwd"></span>
+    </div>
+
+    <partial name="_UserFormItems" model="Model" />
+
+    <input type="submit" value="Submit" />
+</form>

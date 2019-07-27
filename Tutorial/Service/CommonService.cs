@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.EntityFrameworkCore;
 using Tutorial.Portal.DbContext;
@@ -8,7 +9,7 @@ namespace Tutorial.Portal.Service
 {
     public class CommonService<T> : ICommonService<T> where T : BaseEntityModel, new()
     {
-        private DataContext _context;
+        private readonly DataContext _context;
 
         public CommonService(DataContext context)
         {
@@ -33,7 +34,7 @@ namespace Tutorial.Portal.Service
 
         public bool Edit(T entity)
         {
-            _context.Set<T>().Attach(entity);
+            _context.Set<T>().Update(entity);
             return _context.SaveChanges() > 0;
         }
 

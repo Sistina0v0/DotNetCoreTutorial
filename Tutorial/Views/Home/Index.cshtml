@@ -17,6 +17,7 @@
                 <th>LoginName</th>
                 <th>Gender</th>
                 <th>BirthDate</th>
+                <th>Edit</th>
             </tr>
         </thead>
         <tbody>
@@ -28,6 +29,7 @@
                     <td>@user.LoginName</td>
                     <td>@user.Gender</td>
                     <td>@user.BirthDate</td>
+                    <td><a asp-action="Edit" asp-route-id="@user.Id">Edit</a></td>
                 </tr>
             }
         </tbody>

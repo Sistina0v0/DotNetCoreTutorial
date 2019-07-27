@@ -1,0 +1,12 @@
+﻿@model Tutorial.Portal.ViewModel.UserViewModel
+
+@{
+    ViewBag.Title = "Edit user " + @Model.UserName;
+}
+
+<form asp-action="Edit" method="post">
+
+    <partial name="_UserFormItems" model="Model"/>
+
+    <input type="submit" value="Submit"/>
+</form>

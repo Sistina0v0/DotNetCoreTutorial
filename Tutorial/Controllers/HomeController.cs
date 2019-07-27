@@ -32,7 +32,7 @@ namespace Tutorial.Portal.Controllers
         [HttpGet]
         public IActionResult Add()
         {
-            return View(new User());
+            return View(new UserViewModel());
         }
 
         [HttpPost]
@@ -41,8 +41,28 @@ namespace Tutorial.Portal.Controllers
             if (ModelState.IsValid)
             {
                 _userService.Add(user);
+                return RedirectToAction("Index");
             }
             return View();
+        }
+
+        [HttpGet]
+        public IActionResult Edit(int id)
+        {
+            var user = _userService.GetById(id);
+            return View(_mapper.Map<UserViewModel>(user));
+        }
+
+
+        [HttpPost]
+        public IActionResult Edit(UserViewModel user)
+        {
+            var userInfo = _userService.GetById(user.Id);
+            userInfo.UserName = user.UserName;
+            userInfo.Gender = user.Gender;
+            userInfo.BirthDate = user.BirthDate;
+            _userService.Edit(userInfo);
+            return RedirectToAction("Index");
         }
     }
 }
