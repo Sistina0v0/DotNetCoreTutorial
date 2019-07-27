@@ -1,19 +1,45 @@
-﻿@model IEnumerable<Tutorial.Portal.EntityModel.User>
+﻿@model IEnumerable<Tutorial.Portal.ViewModel.UserViewModel>
 @{
 }
 
 <html>
 <head>
-
+    <script src="~/node_modules/jquery/dist/jquery.min.js"></script>
 </head>
 <body>
-<h1>用户信息</h1>
-<ul>
-    @foreach (var user in Model)
-    {
-        <li>@user.UserName</li>
-    }
-</ul>
+    <h1>UserInfo</h1>
+
+    <table style="text-align: center;">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>UserName</th>
+                <th>LoginName</th>
+                <th>Gender</th>
+                <th>BirthDate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var user in Model)
+            {
+                <tr>
+                    <td>@user.Id</td>
+                    <td>@user.UserName</td>
+                    <td>@user.LoginName</td>
+                    <td>@user.Gender</td>
+                    <td>@user.BirthDate</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+
+    <hr />
+
+    <a asp-action="Add">add user</a>
+
+    <hr />
+    @await Html.PartialAsync("_Time", DateTime.Now.ToString())
+
 </body>
 </html>
 

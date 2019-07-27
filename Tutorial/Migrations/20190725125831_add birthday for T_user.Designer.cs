@@ -3,15 +3,17 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using Tutorial.Portal.DbContext;
 
 namespace Tutorial.Portal.Migrations
 {
     [DbContext(typeof(DataContext))]
-    partial class DataContextModelSnapshot : ModelSnapshot
+    [Migration("20190725125831_add birthday for T_user")]
+    partial class addbirthdayforT_user
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -39,28 +41,28 @@ namespace Tutorial.Portal.Migrations
                         new
                         {
                             Id = 1,
-                            ModifiedTime = new DateTime(2019, 7, 26, 21, 40, 38, 530, DateTimeKind.Local).AddTicks(4253),
+                            ModifiedTime = new DateTime(2019, 7, 25, 20, 58, 31, 404, DateTimeKind.Local).AddTicks(3001),
                             ModifiedUser = "AdminInit",
                             RoleName = "炒鸡管理员"
                         },
                         new
                         {
                             Id = 2,
-                            ModifiedTime = new DateTime(2019, 7, 26, 21, 40, 38, 530, DateTimeKind.Local).AddTicks(4788),
+                            ModifiedTime = new DateTime(2019, 7, 25, 20, 58, 31, 404, DateTimeKind.Local).AddTicks(5886),
                             ModifiedUser = "AdminInit",
                             RoleName = "扫地阿姨"
                         },
                         new
                         {
                             Id = 3,
-                            ModifiedTime = new DateTime(2019, 7, 26, 21, 40, 38, 530, DateTimeKind.Local).AddTicks(4797),
+                            ModifiedTime = new DateTime(2019, 7, 25, 20, 58, 31, 404, DateTimeKind.Local).AddTicks(5898),
                             ModifiedUser = "AdminInit",
                             RoleName = "部门经理"
                         },
                         new
                         {
                             Id = 4,
-                            ModifiedTime = new DateTime(2019, 7, 26, 21, 40, 38, 530, DateTimeKind.Local).AddTicks(4797),
+                            ModifiedTime = new DateTime(2019, 7, 25, 20, 58, 31, 404, DateTimeKind.Local).AddTicks(5901),
                             ModifiedUser = "AdminInit",
                             RoleName = "HR"
                         });
@@ -76,15 +78,7 @@ namespace Tutorial.Portal.Migrations
 
                     b.Property<int>("Gender");
 
-                    b.Property<int>("IsDelete");
-
                     b.Property<DateTime>("LastLoginDate");
-
-                    b.Property<string>("LoginName");
-
-                    b.Property<DateTime>("ModifiedTime");
-
-                    b.Property<string>("ModifiedUser");
 
                     b.Property<string>("Pwd");
 
@@ -98,54 +92,38 @@ namespace Tutorial.Portal.Migrations
                         new
                         {
                             Id = 1,
-                            BirthDate = new DateTime(1999, 7, 26, 21, 40, 38, 528, DateTimeKind.Local).AddTicks(8466),
+                            BirthDate = new DateTime(1999, 7, 25, 20, 58, 31, 402, DateTimeKind.Local).AddTicks(8958),
                             Gender = 1,
-                            IsDelete = 0,
-                            LastLoginDate = new DateTime(2019, 7, 26, 21, 40, 38, 527, DateTimeKind.Local).AddTicks(8689),
-                            LoginName = "1",
-                            ModifiedTime = new DateTime(2019, 7, 26, 21, 40, 38, 528, DateTimeKind.Local).AddTicks(9819),
-                            ModifiedUser = "AdminInit",
-                            Pwd = "1",
+                            LastLoginDate = new DateTime(2019, 7, 25, 20, 58, 31, 402, DateTimeKind.Local).AddTicks(2777),
+                            Pwd = "2",
                             UserName = "1"
                         },
                         new
                         {
                             Id = 2,
-                            BirthDate = new DateTime(1997, 7, 26, 21, 40, 38, 529, DateTimeKind.Local).AddTicks(290),
+                            BirthDate = new DateTime(1997, 7, 25, 20, 58, 31, 402, DateTimeKind.Local).AddTicks(9423),
                             Gender = 1,
-                            IsDelete = 0,
-                            LastLoginDate = new DateTime(2019, 7, 26, 21, 40, 38, 529, DateTimeKind.Local).AddTicks(275),
-                            LoginName = "Admin",
-                            ModifiedTime = new DateTime(2019, 7, 26, 21, 40, 38, 529, DateTimeKind.Local).AddTicks(302),
-                            ModifiedUser = "AdminInit",
+                            LastLoginDate = new DateTime(2019, 7, 25, 20, 58, 31, 402, DateTimeKind.Local).AddTicks(9408),
                             Pwd = "Admin",
                             UserName = "Admin"
                         },
                         new
                         {
                             Id = 3,
-                            BirthDate = new DateTime(1996, 7, 26, 21, 40, 38, 529, DateTimeKind.Local).AddTicks(305),
+                            BirthDate = new DateTime(1996, 7, 25, 20, 58, 31, 402, DateTimeKind.Local).AddTicks(9429),
                             Gender = 1,
-                            IsDelete = 0,
-                            LastLoginDate = new DateTime(2019, 7, 26, 21, 40, 38, 529, DateTimeKind.Local).AddTicks(305),
-                            LoginName = "Zhangsan",
-                            ModifiedTime = new DateTime(2019, 7, 26, 21, 40, 38, 529, DateTimeKind.Local).AddTicks(308),
-                            ModifiedUser = "AdminInit",
+                            LastLoginDate = new DateTime(2019, 7, 25, 20, 58, 31, 402, DateTimeKind.Local).AddTicks(9429),
                             Pwd = "Zhangsan",
-                            UserName = "张三"
+                            UserName = "Zhangsan"
                         },
                         new
                         {
                             Id = 4,
-                            BirthDate = new DateTime(2001, 7, 26, 21, 40, 38, 529, DateTimeKind.Local).AddTicks(308),
+                            BirthDate = new DateTime(2001, 7, 25, 20, 58, 31, 402, DateTimeKind.Local).AddTicks(9432),
                             Gender = 0,
-                            IsDelete = 0,
-                            LastLoginDate = new DateTime(2019, 7, 26, 21, 40, 38, 529, DateTimeKind.Local).AddTicks(308),
-                            LoginName = "Lisi",
-                            ModifiedTime = new DateTime(2019, 7, 26, 21, 40, 38, 529, DateTimeKind.Local).AddTicks(311),
-                            ModifiedUser = "AdminInit",
+                            LastLoginDate = new DateTime(2019, 7, 25, 20, 58, 31, 402, DateTimeKind.Local).AddTicks(9432),
                             Pwd = "Lisi",
-                            UserName = "李四"
+                            UserName = "Lisi"
                         });
                 });
 
@@ -154,10 +132,6 @@ namespace Tutorial.Portal.Migrations
                     b.Property<int>("Id")
                         .ValueGeneratedOnAdd()
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
-
-                    b.Property<DateTime>("ModifiedTime");
-
-                    b.Property<string>("ModifiedUser");
 
                     b.Property<int>("RoleId");
 
@@ -171,32 +145,24 @@ namespace Tutorial.Portal.Migrations
                         new
                         {
                             Id = 1,
-                            ModifiedTime = new DateTime(2019, 7, 26, 21, 40, 38, 530, DateTimeKind.Local).AddTicks(6611),
-                            ModifiedUser = "AdminInit",
                             RoleId = 1,
                             UserId = 1
                         },
                         new
                         {
                             Id = 2,
-                            ModifiedTime = new DateTime(2019, 7, 26, 21, 40, 38, 530, DateTimeKind.Local).AddTicks(6633),
-                            ModifiedUser = "AdminInit",
                             RoleId = 2,
                             UserId = 2
                         },
                         new
                         {
                             Id = 3,
-                            ModifiedTime = new DateTime(2019, 7, 26, 21, 40, 38, 530, DateTimeKind.Local).AddTicks(6633),
-                            ModifiedUser = "AdminInit",
                             RoleId = 3,
                             UserId = 3
                         },
                         new
                         {
                             Id = 4,
-                            ModifiedTime = new DateTime(2019, 7, 26, 21, 40, 38, 530, DateTimeKind.Local).AddTicks(6636),
-                            ModifiedUser = "AdminInit",
                             RoleId = 4,
                             UserId = 4
                         });
